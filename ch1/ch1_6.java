@@ -18,6 +18,10 @@ public class ch1_6 {
 	}
 
 	public static void rotate(int[][] m) {
+		if (m.length != m[0].length) {
+			System.out.println("It's not nxn matrix!");
+			return;
+		}
 		rotateRec(m, 0);	
 	}
 
