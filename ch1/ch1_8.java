@@ -26,7 +26,7 @@ public class ch1_8 {
 
 	//check whether s2 is rotation of s1
 	public static boolean isRotation(String s1, String s2) {
-		if (s1.length() != s2.length())
+		if (s1.length() != s2.length() || s1.isEmpty())
 			return false;
 		if (s1.equals(s2))
 			return true;
@@ -41,7 +41,7 @@ public class ch1_8 {
 	
 	//better solution
 	public static boolean isRotation2(String s1, String s2) {
-		if (s1.length() != s2.length())
+		if (s1.length() != s2.length() || s1.isEmpty())
 			return false;
 		String s1s1 = s1 + s1;
 		return isSubstring(s1s1, s2);
