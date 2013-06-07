@@ -14,6 +14,12 @@ public class Node {
 		n.next = end;
 	}
 
+	public Node appendToHead(int d) {
+		Node h = new Node(d);
+		h.next = this;
+		return h;
+	}
+
 	public void print() {
 		Node n = this;
 		while (n != null) {
@@ -21,5 +27,15 @@ public class Node {
 			n = n.next;
 		}
 		System.out.println();
+	}
+
+	public int length() {
+		int len = 0;
+		Node n = this;
+		while (n != null) {
+			len++;
+			n = n.next;
+		}
+		return len;
 	}
 }
