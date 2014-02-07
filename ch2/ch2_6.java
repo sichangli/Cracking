@@ -9,9 +9,10 @@ public class ch2_6 {
 		n.appendToTail(4);
 		n.appendToTail(5);
 		n.next.next.next.next.next = n.next.next;
-		System.out.println(findBeginning(n).data);
+		System.out.println(findBeginning2(n).data);
 	}
 
+	// O(n) space
 	public static Node findBeginning(Node n) {
 		HashSet<String> s  = new HashSet<String>();
 		for (Node i = n; i != null; i = i.next) {
@@ -21,6 +22,27 @@ public class ch2_6 {
 				s.add(i.toString());
 		}
 		return null;
+	}
+
+	// no extra space, assume given circular linked list
+	public static Node findBeginning2(Node n) {
+		Node slow = n;
+		Node fast = n;
+
+		while (true) {
+			slow = slow.next;
+			fast = fast.next.next;
+			if (slow == fast)
+				break;
+		}
+
+		slow = n;
+		while (slow != fast) {
+			slow = slow.next;
+			fast = fast.next;
+		}
+
+		return slow;
 	}
 
 }
