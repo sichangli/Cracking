@@ -111,7 +111,7 @@ public class ch4_7 {
 			return root;
 		}
 
-		return l == null ? null : r;
+		return l != null ? l : r;
 	}
 
 	public static class Result {
