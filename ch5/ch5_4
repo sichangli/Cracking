@@ -1,0 +1,6 @@
+
+((n & (n - 1)) == 0)
+
+checks whether n has only one 1. If n has more than one of 1s, this will be false.
+
+It also means check whether n is a power of 2 (or n is 0).
